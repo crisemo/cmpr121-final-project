@@ -42,18 +42,19 @@ void CandidateType::printCandidateCampusVotes(int campusNumber) const
 {
 	printName();
 	std::cout << std::endl;
-	std::cout << "    =>  Campus " << campusNumber << " total votes: " << getVotesByCampus(campusNumber) << std::endl; //QUESTION follow exact spacing for output? `    =>  `
-}
+	std::cout << "\t=>  Campus " << campusNumber << " total votes: " << getVotesByCampus(campusNumber) << std::endl;
 
 void CandidateType::printCandidateInfo() const
 {
 	printSSN();
-	std::cout << " - " << getLastName() << ", " << getFirstName();
+	//std::cout << " - " << getLastName() << ", " << getFirstName(); // REDUNDANCY, no?
+	std::cout << " - "; printName(); // we already have a function for displaying the name, why not use it?
+	std::cout << std::endl; 
 }
 
 void CandidateType::printCandidateTotalVotes() const
 {
 	printName();
 	std::cout << std::endl;
-	std::cout << "    =>  Total Votes (all campuses): " << getTotalVotes() << std::endl; //QUESTION does it have to be 2 integers? ## means 01?
+	std::cout << "\t=>  Total Votes (all campuses): " << getTotalVotes() << std::endl;
 }
